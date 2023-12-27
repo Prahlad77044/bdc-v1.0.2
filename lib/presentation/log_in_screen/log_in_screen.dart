@@ -29,11 +29,10 @@ class LogInScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ClipRRect(
-                            child: CustomImageView(
-                                imagePath: ImageConstant.imgLogo1,
-                                height: 104.v,
-                                width: 99.h),
-                          ),
+                              child: Image.asset(
+                            'assets/images/blood.png',
+                            height: 130,
+                          )),
                           SizedBox(height: 16.v),
                           Text("Welcome!!!",
                               style: CustomTextStyles.headlineSmallPrimary),
@@ -66,7 +65,7 @@ class LogInScreen extends StatelessWidget {
                                   },
                                   child: Padding(
                                       padding: EdgeInsets.only(right: 15.h),
-                                      child: Text("forget password?",
+                                      child: Text("forget password",
                                           style: CustomTextStyles
                                               .bodyMediumGray800)))),
                           SizedBox(height: 56.v),
