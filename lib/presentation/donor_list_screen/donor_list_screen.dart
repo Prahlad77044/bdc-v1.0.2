@@ -1,8 +1,5 @@
 import '../donor_list_screen/widgets/donorlist_item_widget.dart';
 import 'package:bdc/core/app_export.dart';
-import 'package:bdc/widgets/app_bar/appbar_leading_image.dart';
-import 'package:bdc/widgets/app_bar/appbar_subtitle.dart';
-import 'package:bdc/widgets/app_bar/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class DonorListScreen extends StatelessWidget {
@@ -14,7 +11,10 @@ class DonorListScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.primary,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              title: Text('Donor\'s List'),
+              backgroundColor: Colors.red[800],
+            ),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 23.v),
@@ -27,19 +27,6 @@ class DonorListScreen extends StatelessWidget {
                 ]))));
   }
 
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: 36.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeft,
-            margin: EdgeInsets.only(left: 29.h, top: 24.v, bottom: 20.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        title: AppbarSubtitle(
-            text: "Donor’s List", margin: EdgeInsets.only(left: 80.h)));
-  }
 
   /// Section Widget
   Widget _buildDonorList(BuildContext context) {

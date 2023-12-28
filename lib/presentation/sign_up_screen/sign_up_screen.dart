@@ -3,10 +3,13 @@ import 'package:bdc/widgets/custom_elevated_button.dart';
 import 'package:bdc/widgets/custom_outlined_button.dart';
 import 'package:bdc/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:bdc/widgets/custom_drop_down.dart';
 
 // ignore_for_file: must_be_immutable
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
+
+  List<String> dropdownItemList2=["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
   TextEditingController nameController = TextEditingController();
 
@@ -29,83 +32,94 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: Form(
-                key: _formKey,
-                child: SizedBox(
-                    width: double.maxFinite,
-                    child: Column(children: [
-                      SizedBox(height: 49.v),
-                      Expanded(
-                          child: SingleChildScrollView(
-                              child: Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 22.h, right: 15.h, bottom: 58.v),
-                                  child: Column(children: [
-                                    Text("Sign Up",
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Form(
+            key: _formKey,
+            child: Column(children: [
+              SizedBox(height: 49.v),
+              Expanded(
+                  child: SingleChildScrollView(
+                      child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 22.h, right: 15.h, bottom: 58.v),
+                          child: Column(children: [
+                            Text("Sign Up",
+                                style: CustomTextStyles
+                                    .headlineSmallPrimary),
+                            SizedBox(height: 38.v),
+                            Align(
+                                alignment: Alignment.centerLeft,
+                                child: Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 7.h),
+                                    child: Text("Please register below",
                                         style: CustomTextStyles
-                                            .headlineSmallPrimary),
-                                    SizedBox(height: 38.v),
-                                    Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 7.h),
-                                            child: Text("Please register below",
-                                                style: CustomTextStyles
-                                                    .bodyMediumSegoeUIBluegray900))),
-                                    SizedBox(height: 16.v),
-                                    _buildName(context),
-                                    SizedBox(height: 16.v),
-                                    _buildEmail(context),
-                                    SizedBox(height: 16.v),
-                                    _buildPassword(context),
-                                    SizedBox(height: 18.v),
-                                    _buildDateOfBirth(context),
-                                    SizedBox(height: 18.v),
-                                    _buildPhoneNumber(context),
-                                    SizedBox(height: 13.v),
-                                    _buildProvinceNumber(context),
-                                    SizedBox(height: 16.v),
-                                    _buildAddress(context),
-                                    SizedBox(height: 32.v),
-                                    Text(
-                                        "Any medical issue? If any State below.",
-                                        style: CustomTextStyles
-                                            .bodyMediumPrimary_1),
-                                    SizedBox(height: 20.v),
-                                    _buildIssue(context),
-                                    SizedBox(height: 30.v),
-                                    _buildSELECTYOURBLOODGROUP(context),
-                                    SizedBox(height: 26.v),
-                                    _buildBROWSE1(context),
-                                    SizedBox(height: 35.v),
-                                    _buildBROWSE3(context),
-                                    SizedBox(height: 26.v),
-                                    _buildSignUp(context),
-                                    SizedBox(height: 37.v),
-                                    Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 31.h, right: 33.h),
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text("Already have an account?",
-                                                  style: CustomTextStyles
-                                                      .bodyMediumBlack900_1),
-                                              GestureDetector(
-                                                  onTap: () {
-                                                    onTapTxtLogIn(context);
-                                                  },
-                                                  child: Text("Log In",
-                                                      style: CustomTextStyles
-                                                          .titleSmallPrimary_1))
-                                            ]))
-                                  ]))))
-                    ])))));
+                                            .bodyMediumSegoeUIBluegray900))),
+                            SizedBox(height: 16.v),
+                            _buildName(context),
+                            SizedBox(height: 13.v),
+                            _buildEmail(context),
+                            SizedBox(height: 13.v),
+                            _buildPassword(context),
+                            SizedBox(height: 13.v),
+                            _buildDateOfBirth(context),
+                            SizedBox(height: 13.v),
+                            _buildPhoneNumber(context),
+                            SizedBox(height: 13.v),
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    right: 7.h),
+                                child: CustomDropDown(
+                                    icon: Container(
+
+                                        child: CustomImageView(
+
+                                            height: 9.v,
+                                            width: 18.h)),
+                                    hintText: "Blood Group",
+                                    items: dropdownItemList2,
+                                    onChanged: (value) {})),
+                            SizedBox(height: 13,),
+                            _buildProvinceNumber(context),
+                            SizedBox(height: 13.v),
+                            _buildAddress(context),
+                            SizedBox(height: 18.v),
+                            Text(
+                                "Any medical issue? If any State below.",
+                                style: CustomTextStyles
+                                    .bodyMediumPrimary_1),
+                            SizedBox(height: 13.v),
+                            _buildIssue(context),
+
+
+                            SizedBox(height: 13.v),
+                            _buildBROWSE1(context),
+                            SizedBox(height: 35.v),
+                            _buildBROWSE3(context),
+                            SizedBox(height: 26.v),
+                            _buildSignUp(context),
+                            SizedBox(height: 37.v),
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    left: 31.h, right: 33.h),
+                                child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text("Already have an account?",
+                                          style: CustomTextStyles
+                                              .bodyMediumBlack900_1),
+                                      GestureDetector(
+                                          onTap: () {
+                                            onTapTxtLogIn(context);
+                                          },
+                                          child: Text("Log In",
+                                              style: CustomTextStyles
+                                                  .titleSmallPrimary_1))
+                                    ]))
+                          ]))))
+            ])));
   }
 
   /// Section Widget
@@ -159,7 +173,7 @@ class SignUpScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildProvinceNumber(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 3.h, right: 4.h),
+        padding: EdgeInsets.only( right: 7.h),
         child: CustomTextFormField(
             controller: provinceNumberController,
             hintText: "Province Number",
@@ -172,7 +186,7 @@ class SignUpScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAddress(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 3.h, right: 4.h),
+        padding: EdgeInsets.only(right: 7.h),
         child: CustomTextFormField(
             controller: addressController,
             hintText: "Address ( City, District )",
@@ -184,27 +198,13 @@ class SignUpScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildIssue(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 3.h, right: 4.h),
+        padding: EdgeInsets.only(right: 7.h),
         child: CustomTextFormField(
             controller: issueController,
             hintText: "Issue",
             textInputAction: TextInputAction.done,
-            contentPadding:
-                EdgeInsets.symmetric(horizontal: 30.h, vertical: 32.v),
-            borderDecoration: TextFormFieldStyleHelper.outlineBlackTL25));
-  }
 
-  /// Section Widget
-  Widget _buildSELECTYOURBLOODGROUP(BuildContext context) {
-    return CustomOutlinedButton(
-        height: 39.v,
-        text: "           SELECT YOUR BLOOD GROUP",
-        margin: EdgeInsets.only(left: 7.h, right: 2.h),
-        buttonStyle: CustomButtonStyles.outlineBlack,
-        buttonTextStyle: CustomTextStyles.titleSmallRobotoOnPrimary,
-        onPressed: () {
-          onTapSELECTYOURBLOODGROUP(context);
-        });
+            borderDecoration: TextFormFieldStyleHelper.outlineBlackTL25));
   }
 
   /// Section Widget
@@ -275,9 +275,6 @@ class SignUpScreen extends StatelessWidget {
   }
 
   /// Navigates to the bloodTypeSelectScreen when the action is triggered.
-  onTapSELECTYOURBLOODGROUP(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.bloodTypeSelectOneScreen);
-  }
 
   /// Navigates to the logInScreen when the action is triggered.
   onTapTxtLogIn(BuildContext context) {

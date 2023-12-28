@@ -13,59 +13,58 @@ class SuccesfulAccRecoverDialog extends StatelessWidget {
     mediaQueryData = MediaQuery.of(context);
 
     return Container(
-      width: 288.h,
-      padding: EdgeInsets.symmetric(
-        horizontal: 74.h,
-        vertical: 13.v,
-      ),
+      height: double.maxFinite,
+      width: double.maxFinite,
+
       decoration: AppDecoration.fillOnPrimary,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.end,
+
         children: [
-          SizedBox(height: 34.v),
-          Container(
-            height: 115.v,
-            width: 119.h,
-            margin: EdgeInsets.only(left: 6.h),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgCheckmark,
-                  height: 35.v,
-                  width: 56.h,
-                  alignment: Alignment.center,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    height: 115.v,
-                    width: 119.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        59.h,
-                      ),
-                      border: Border.all(
-                        color: theme.colorScheme.primary,
-                        width: 5.h,
+          SizedBox(height: 313.v),
+          Center(
+            child: Container(
+              height: 115.v,
+              width: 119.h,
+              margin: EdgeInsets.only(left: 6.h),
+              child: Center(
+                child: Stack(
+
+                  children: [
+                    CustomImageView(
+                      imagePath: ImageConstant.imgCheckmark,
+                      height: 35.v,
+                      width: 56.h,
+                      alignment: Alignment.center,
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 115.v,
+                        width: 119.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            59.h,
+                          ),
+                          border: Border.all(
+                            color: theme.colorScheme.primary,
+                            width: 5.h,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
-          SizedBox(height: 26.v),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Container(
-              width: 128.h,
-              margin: EdgeInsets.only(left: 10.h),
+          SizedBox(height: 6.v),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 39.0),
               child: Text(
-                "Account  recovered         successfully",
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
+                "Account \nrecovered \nsuccessfully",
+
+
                 style: CustomTextStyles.titleLargeBluegray900,
               ),
             ),

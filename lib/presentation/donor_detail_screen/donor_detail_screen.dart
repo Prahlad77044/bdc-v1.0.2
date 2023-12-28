@@ -1,7 +1,4 @@
 import 'package:bdc/core/app_export.dart';
-import 'package:bdc/widgets/app_bar/appbar_leading_image.dart';
-import 'package:bdc/widgets/app_bar/appbar_title.dart';
-import 'package:bdc/widgets/app_bar/custom_app_bar.dart';
 import 'package:bdc/widgets/custom_checkbox_button.dart';
 import 'package:bdc/widgets/custom_drop_down.dart';
 import 'package:bdc/widgets/custom_elevated_button.dart';
@@ -42,7 +39,9 @@ class DonorDetailScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              title: Text('Details'),
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -80,19 +79,6 @@ class DonorDetailScreen extends StatelessWidget {
                         ]))))));
   }
 
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: 29.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeftGray800,
-            margin: EdgeInsets.only(left: 22.h, top: 22.v, bottom: 22.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        centerTitle: true,
-        title: AppbarTitle(text: "Details"));
-  }
 
   /// Section Widget
   Widget _buildName(BuildContext context) {
