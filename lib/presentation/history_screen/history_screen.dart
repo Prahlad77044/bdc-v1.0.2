@@ -24,7 +24,7 @@ class HistoryScreen extends StatelessWidget {
                                   width: double.maxFinite,
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 32.h, vertical: 36.v),
-
+                                  decoration: AppDecoration.fillPrimary,
                                   child: Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -246,3 +246,4 @@ class HistoryScreen extends StatelessWidget {
     Navigator.pop(context);
   }
 }
+
