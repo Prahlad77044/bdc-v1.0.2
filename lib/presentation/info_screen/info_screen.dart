@@ -59,15 +59,7 @@ class InfoScreen extends StatelessWidget {
         title: Text('Information'),
         backgroundColor: Colors.red[800],
       ),
-      body: Padding(
-        padding:  EdgeInsets.all(10.0),
-        child: SingleChildScrollView(
-          child: Text(
-             bloodDonationInfoNepal,
 
-          ),
-        ),
-      ),
     );
   }
 }
