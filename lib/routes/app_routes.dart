@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:bdc/presentation/welcome_screen/welcome_screen.dart';
 import 'package:bdc/presentation/upload_photo_screen/upload_photo_screen.dart';
 import 'package:bdc/presentation/upload_photo_two_screen/upload_photo_two_screen.dart';
-import 'package:bdc/presentation/blood_type_select_screen/blood_type_select_screen.dart';
+
 import 'package:bdc/presentation/upload_document_screen/upload_document_screen.dart';
 import 'package:bdc/presentation/upload_document_two_screen/upload_document_two_screen.dart';
 import 'package:bdc/presentation/sign_up_screen/sign_up_screen.dart';
@@ -19,11 +19,10 @@ import 'package:bdc/presentation/doc_request_one_screen/doc_request_one_screen.d
 import 'package:bdc/presentation/home_page_screen/home_page_screen.dart';
 import 'package:bdc/presentation/donate_from_home_bottomsheet/donate_from_home_bottomsheet.dart';
 import 'package:bdc/presentation/rewards_screen/rewards_screen.dart';
-import 'package:bdc/presentation/blood_type_select_one_screen/blood_type_select_one_screen.dart';
-import 'package:bdc/presentation/donor_detail_screen/donor_detail_screen.dart';
-
-import 'package:bdc/presentation/upload_profile_photo_two_screen/upload_profile_photo_two_screen.dart';
 import 'package:bdc/presentation/profile_screen/profile_screen.dart';
+import 'package:bdc/presentation/donor_detail_screen/donor_detail_screen.dart';
+import 'package:bdc/presentation/info_screen/info_screen.dart';
+import 'package:bdc/presentation/upload_profile_photo_two_screen/upload_profile_photo_two_screen.dart';
 import 'package:bdc/presentation/upload_profile_photo_screen/upload_profile_photo_screen.dart';
 import 'package:bdc/presentation/requests_screen/requests_screen.dart';
 import 'package:bdc/presentation/doc_home_page_screen/doc_home_page_screen.dart';
@@ -36,6 +35,8 @@ class AppRoutes {
   static const String uploadPhotoScreen = '/upload_photo_screen';
 
   static const String uploadPhotoTwoScreen = '/upload_photo_two_screen';
+
+  static const String profileScreen = '/profile_screen';
 
   static const String bloodTypeSelectScreen = '/blood_type_select_screen';
 
@@ -81,7 +82,6 @@ class AppRoutes {
   static const String uploadProfilePhotoTwoScreen =
       '/upload_profile_photo_two_screen';
 
-  static const String profileScreen = '/profile_screen';
 
   static const String uploadProfilePhotoScreen = '/upload_profile_photo_screen';
 
@@ -91,6 +91,8 @@ class AppRoutes {
 
   static const String historyScreen = '/history_screen';
 
+  static const String infoScreen = '/info_screen';
+
   static const String appNavigationScreen = '/app_navigation_screen';
 
   static const String  donateFromHomeBottomsheet= '/donate_from_home_bottomsheet.dart';
@@ -98,9 +100,10 @@ class AppRoutes {
   static Map<String, WidgetBuilder> routes = {
 
     welcomeScreen: (context) => WelcomeScreen(),
+    infoScreen: (context) => InfoScreen(),
     uploadPhotoScreen: (context) => UploadPhotoScreen(),
     uploadPhotoTwoScreen: (context) => UploadPhotoTwoScreen(),
-    bloodTypeSelectScreen: (context) => BloodTypeSelectScreen(),
+    profileScreen:(context) => ProfileScreen(),
     uploadDocumentScreen: (context) => UploadDocumentScreen(),
     uploadDocumentTwoScreen: (context) => UploadDocumentTwoScreen(),
     signUpScreen: (context) => SignUpScreen(),
@@ -116,10 +119,8 @@ class AppRoutes {
     donorListScreen: (context) => DonorListScreen(),
     docRequestOneScreen: (context) => DocRequestOneScreen(),
     homePageScreen: (context) => HomePageScreen(),
-    bloodTypeSelectOneScreen: (context) => BloodTypeSelectOneScreen(),
     donorDetailScreen: (context) => DonorDetailScreen(),
     uploadProfilePhotoTwoScreen: (context) => UploadProfilePhotoTwoScreen(),
-    profileScreen: (context) => ProfileScreen(),
     uploadProfilePhotoScreen: (context) => UploadProfilePhotoScreen(),
     requestsScreen: (context) => RequestsScreen(),
     docHomePageScreen: (context) => DocHomePageScreen(),

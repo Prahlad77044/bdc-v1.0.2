@@ -1,4 +1,4 @@
-export 'package:bdc/core/constants/constants.dart';
+
 export 'package:bdc/core/utils/image_constant.dart';
 export 'package:bdc/core/utils/size_utils.dart';
 export 'package:bdc/routes/app_routes.dart';

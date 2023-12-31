@@ -1,5 +1,4 @@
 import 'package:bdc/core/app_export.dart';
-import 'package:bdc/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -8,242 +7,501 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            body: SizedBox(
-                width: double.maxFinite,
-                child: SingleChildScrollView(
-                    child: SizedBox(
-                        height: mediaQueryData.size.height,
-                        width: double.maxFinite,
-                        child:
-                            Stack(alignment: Alignment.bottomCenter, children: [
-                          Align(
-                              alignment: Alignment.center,
-                              child: Container(
-                                  width: double.maxFinite,
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 32.h, vertical: 36.v),
-                                  decoration: AppDecoration.fillPrimary,
-                                  child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        CustomImageView(
-                                            imagePath:
-                                                ImageConstant.imgArrowLeft,
-                                            height: 11.v,
-                                            width: 7.h,
-                                            margin: EdgeInsets.only(
-                                                top: 6.v, bottom: 721.v),
-                                            onTap: () {
-                                              onTapImgArrowLeft(context);
-                                            }),
-                                        Padding(
-                                            padding: EdgeInsets.only(
-                                                left: 26.h, bottom: 713.v),
-                                            child: Text("History",
-                                                style:
-                                                    theme.textTheme.titleLarge))
-                                      ]))),
-                          Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 32.h, vertical: 15.v),
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadiusStyle.customBorderTL30),
-                                  child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        _buildName(context,
-                                            name: "Name",
-                                            drWillTunde: "Dr. Will Tunde"),
-                                        SizedBox(height: 13.v),
-                                        _buildLocation(context,
-                                            location: "Location",
-                                            generalHospital:
-                                                "General Hospital, Barracks"),
-                                        SizedBox(height: 12.v),
-                                        _buildAddress(context,
-                                            address: "Address",
-                                            abiolaWayAkure:
-                                                "1, Abiola Way, Akure"),
-                                        SizedBox(height: 10.v),
-                                        _buildDate(context,
-                                            date: "Date ",
-                                            threeThousandThreeHundredTwent:
-                                                "3/3/21"),
-                                        SizedBox(height: 19.v),
-                                        CustomElevatedButton(
-                                            height: 38.v,
-                                            text: "Accepted",
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: 32.h),
-                                            buttonStyle:
-                                                CustomButtonStyles.fillGreenAA,
-                                            buttonTextStyle: CustomTextStyles
-                                                .labelLargeGray900,
-                                            alignment: Alignment.center),
-                                        SizedBox(height: 218.v),
-                                        _buildName(context,
-                                            name: "Name",
-                                            drWillTunde: "Dr. Will Tunde"),
-                                        SizedBox(height: 13.v),
-                                        _buildLocation(context,
-                                            location: "Location",
-                                            generalHospital:
-                                                "General Hospital, Barracks"),
-                                        SizedBox(height: 12.v),
-                                        _buildAddress(context,
-                                            address: "Address",
-                                            abiolaWayAkure:
-                                                "1, Abiola Way, Akure"),
-                                        SizedBox(height: 10.v),
-                                        _buildDate(context,
-                                            date: "Date ",
-                                            threeThousandThreeHundredTwent:
-                                                "3/3/21"),
-                                        SizedBox(height: 16.v),
-                                        CustomElevatedButton(
-                                            height: 38.v,
-                                            text: "Rejected",
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: 32.h),
-                                            buttonStyle: CustomButtonStyles
-                                                .fillDeepOrange,
-                                            buttonTextStyle: CustomTextStyles
-                                                .labelLargeGray900,
-                                            alignment: Alignment.center),
-                                        SizedBox(height: 16.v)
-                                      ]))),
-                          _buildAccepted(context)
-                        ]))))));
-  }
-
-  /// Section Widget
-  Widget _buildAccepted(BuildContext context) {
-    return Align(
-        alignment: Alignment.topCenter,
-        child: Container(
-            margin: EdgeInsets.only(top: 274.v),
-            padding: EdgeInsets.symmetric(horizontal: 31.h, vertical: 14.v),
-            decoration: AppDecoration.outlineGray,
-            child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
+    return Container(
+      width: 375,
+      height: 812,
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(color: Colors.white),
+      child: Stack(
+        children: [
+          Positioned(
+            left: 0,
+            top: 85,
+            child: Container(
+              width: 375,
+              height: 750,
+              decoration: ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 135,
+            top: 43,
+            child: Text(
+              'History',
+              style: TextStyle(
+                color: Color(0xFFC62C2C),
+                fontSize: 20,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w700,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 75,
+            top: 101,
+            child: Text(
+              'Abraham ',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 16,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w500,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 136,
+            child: Text(
+              'Location',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 108,
+            child: Text(
+              'Name',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 75,
+            top: 133,
+            child: Text(
+              'General Hospital, Barracks',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 163,
+            child: Text(
+              'Address',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 76,
+            top: 160,
+            child: Text(
+              '1, Abiola Way, Akure',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 189,
+            child: Text(
+              'Date ',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 76,
+            top: 187,
+            child: Text(
+              '9/5/23',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 64,
+            top: 222,
+            child: Container(
+              width: 247,
+              height: 38,
+              decoration: ShapeDecoration(
+                color: Color(0xA0C8F9C4),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 158,
+            top: 235,
+            child: Text(
+              'Accepted',
+              style: TextStyle(
+                color: Color(0xFF222222),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: -27,
+            top: 274,
+            child: Container(
+              width: 424,
+              height: 192,
+              decoration: ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(width: 1, color: Color(0xFFC4C4C4)),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 75,
+            top: 290,
+            child: Text(
+              'Bipin Ghimire',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 16,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w500,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 325,
+            child: Text(
+              'Location',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 297,
+            child: Text(
+              'Name',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 75,
+            top: 322,
+            child: Text(
+              'General Hospital, Barracks',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 352,
+            child: Text(
+              'Address',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 64,
+            top: 411,
+            child: Container(
+              width: 247,
+              height: 38,
+              child: Stack(
                 children: [
-                  _buildName(context,
-                      name: "Name", drWillTunde: "Dr. Will Tunde"),
-                  SizedBox(height: 13.v),
-                  _buildLocation(context,
-                      location: "Location",
-                      generalHospital: "General Hospital, Barracks"),
-                  SizedBox(height: 12.v),
-                  _buildAddress(context,
-                      address: "Address",
-                      abiolaWayAkure: "1, Abiola Way, Akure"),
-                  SizedBox(height: 10.v),
-                  _buildDate(context,
-                      date: "Date ", threeThousandThreeHundredTwent: "3/3/21"),
-                  SizedBox(height: 19.v),
-                  CustomElevatedButton(
-                      height: 38.v,
-                      text: "Accepted",
-                      margin: EdgeInsets.symmetric(horizontal: 32.h),
-                      buttonStyle: CustomButtonStyles.fillGreenAA,
-                      buttonTextStyle: CustomTextStyles.labelLargeGray900,
-                      alignment: Alignment.center)
-                ])));
-  }
-
-  /// Common widget
-  Widget _buildName(
-    BuildContext context, {
-    required String name,
-    required String drWillTunde,
-  }) {
-    return Row(children: [
-      Padding(
-          padding: EdgeInsets.only(top: 7.v, bottom: 1.v),
-          child: Text(name,
-              style: CustomTextStyles.bodySmallGray500
-                  .copyWith(color: appTheme.gray500))),
-      Padding(
-          padding: EdgeInsets.only(left: 15.h),
-          child: Text(drWillTunde,
-              style: theme.textTheme.titleMedium!
-                  .copyWith(color: appTheme.gray800)))
-    ]);
-  }
-
-  /// Common widget
-  Widget _buildLocation(
-    BuildContext context, {
-    required String location,
-    required String generalHospital,
-  }) {
-    return Row(children: [
-      Padding(
-          padding: EdgeInsets.only(top: 1.v, bottom: 2.v),
-          child: Text(location,
-              style: CustomTextStyles.bodySmallGray500
-                  .copyWith(color: appTheme.gray500))),
-      Padding(
-          padding: EdgeInsets.only(left: 4.h),
-          child: Text(generalHospital,
-              style: CustomTextStyles.bodySmallGray800_1
-                  .copyWith(color: appTheme.gray800)))
-    ]);
-  }
-
-  /// Common widget
-  Widget _buildAddress(
-    BuildContext context, {
-    required String address,
-    required String abiolaWayAkure,
-  }) {
-    return Row(children: [
-      Padding(
-          padding: EdgeInsets.only(top: 1.v, bottom: 2.v),
-          child: Text(address,
-              style: CustomTextStyles.bodySmallGray500
-                  .copyWith(color: appTheme.gray500))),
-      Padding(
-          padding: EdgeInsets.only(left: 7.h),
-          child: Text(abiolaWayAkure,
-              style: CustomTextStyles.bodySmallGray800_1
-                  .copyWith(color: appTheme.gray800)))
-    ]);
-  }
-
-  /// Common widget
-  Widget _buildDate(
-    BuildContext context, {
-    required String date,
-    required String threeThousandThreeHundredTwent,
-  }) {
-    return Row(children: [
-      Padding(
-          padding: EdgeInsets.only(top: 2.v, bottom: 1.v),
-          child: Text(date,
-              style: CustomTextStyles.bodySmallGray500
-                  .copyWith(color: appTheme.gray500))),
-      Padding(
-          padding: EdgeInsets.only(left: 22.h),
-          child: Text(threeThousandThreeHundredTwent,
-              style: CustomTextStyles.bodySmallGray800_1
-                  .copyWith(color: appTheme.gray800)))
-    ]);
-  }
-
-  /// Navigates back to the previous screen.
-  onTapImgArrowLeft(BuildContext context) {
-    Navigator.pop(context);
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: Container(
+                      width: 247,
+                      height: 38,
+                      decoration: ShapeDecoration(
+                        color: Color(0xA0C8F9C4),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 94,
+                    top: 13,
+                    child: Text(
+                      'Accepted',
+                      style: TextStyle(
+                        color: Color(0xFF222222),
+                        fontSize: 12,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            left: 76,
+            top: 349,
+            child: Text(
+              '1, Abiola Way, Akure',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 378,
+            child: Text(
+              'Date ',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 76,
+            top: 376,
+            child: Text(
+              '3/3/23',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 75,
+            top: 479,
+            child: Text(
+              'Prahlad Neupane ',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 16,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w500,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 514,
+            child: Text(
+              'Location',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 486,
+            child: Text(
+              'Name',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 75,
+            top: 511,
+            child: Text(
+              'General Hospital, Barracks',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 541,
+            child: Text(
+              'Address',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 76,
+            top: 538,
+            child: Text(
+              '1, Abiola Way, Akure',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 567,
+            child: Text(
+              'Date ',
+              style: TextStyle(
+                color: Color(0xFF979494),
+                fontSize: 9,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 76,
+            top: 565,
+            child: Text(
+              '3/6/23',
+              style: TextStyle(
+                color: Color(0xFF484848),
+                fontSize: 12,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 64,
+            top: 597,
+            child: Container(
+              width: 247,
+              height: 38,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: Container(
+                      width: 247,
+                      height: 38,
+                      decoration: ShapeDecoration(
+                        color: Color(0x93F5C0C0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 96,
+                    top: 13,
+                    child: Text(
+                      'Rejected',
+                      style: TextStyle(
+                        color: Color(0xFF222222),
+                        fontSize: 12,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
-

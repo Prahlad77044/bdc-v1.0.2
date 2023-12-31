@@ -48,7 +48,7 @@ class HomePageScreen extends StatelessWidget {
                   ),
                   ListTile(
                     onTap: (){
-                      Navigator.pushNamed(context, '/profile_screen');
+                      Navigator.pushNamed(context, '/info_screen');
                     },
                     leading: Icon(Icons.info_outlined),
                     title: Text('Information'),
